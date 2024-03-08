@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e3edf7;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+}
+
+.accordion_2 {
+  margin: 60px auto;
+  max-width: 600px;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.accordion_2 li {
+  list-style: none;
+  width: 100%;
+  /* margin: 20px; */
+  padding: 10px;
+
+  border-radius: 8px;
+  background: #e3edf7;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(0, 0, 0, 0.15);
+}
+
+.accordion_2 li label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+label::before {
+  content: '+';
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.accordion_2 .content {
+  color: #555;
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+.accordion_2 input[type='checkbox']:checked + label + .content {
+  max-height: max-content;
+  padding: 10px 10px 20px;
+}
+
+.accordion_2 input[type='checkbox']:checked + label::before {
+  content: '-';
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
